@@ -9,7 +9,7 @@
   CheckAll = (el, options) ->
     @el = el
     @options = $.extend(target: ':checkbox', reverse: false, checked: null, sync: true, options)
-    $(@options.target).on 'change.checkall', $.proxy(@checkMaster, this)
+    $(@options.target).on 'click.checkall', $.proxy(@checkMaster, this)
     @el.on 'change.checkall', $.proxy(@clickMaster, this)
     if @options.sync && (@el.is(':checkbox') || @el.is(':radio'))
       @checkAll(@el.is(':checked'))
